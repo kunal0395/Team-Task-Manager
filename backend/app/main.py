@@ -18,6 +18,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.get("/favicon.ico")
+async def favicon():
+    return {"status": "ok"}
+
 @app.on_event("startup")
 async def startup_event():
     await connect_to_mongo()
