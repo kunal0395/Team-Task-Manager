@@ -8,6 +8,6 @@ export default defineConfig({
     tailwindcss(),
   ],
   preview: {
-    allowedHosts: 'all'
+    allowedHosts: ['team-task-manager-production-c2d6.up.railway.app']
   }
 })
