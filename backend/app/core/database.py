@@ -8,8 +8,6 @@ async def connect_to_mongo():
     global client, database
     client = AsyncIOMotorClient(settings.MONGO_URI)
     database = client[settings.DB_NAME]
-    print("USING URI:", settings.MONGO_URI)
-    print("USING DB:", settings.DB_NAME)
     await database.users.create_index("email", unique=True)
     await database.project_members.create_index(
         [("projectId", 1), ("userId", 1)],

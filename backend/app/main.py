@@ -8,8 +8,6 @@ from app.utils.seed_admin import seed_admin
 
 app = FastAPI(title="Team Task Manager API")
 
-print("Allowed CORS origins:", settings.CLIENT_ORIGINS)
-
 app.add_middleware(
     CORSMiddleware,
     allow_origins=settings.CLIENT_ORIGINS,
